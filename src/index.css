@@ -1,13 +1,156 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-dark-bg text-dark-text font-sans antialiased selection:bg-primary selection:text-white;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 transform outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-bg;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-light text-white shadow-lg shadow-primary/30 hover:-translate-y-0.5 focus:ring-primary;
+  }
+  
+  .btn-secondary {
+    @apply bg-dark-card border border-dark-border hover:border-primary-light hover:text-primary-light text-dark-text shadow-sm hover:-translate-y-0.5 focus:ring-primary-light;
+  }
+
+  .glass-card {
+    @apply bg-dark-card/50 backdrop-blur-md border border-dark-border rounded-2xl overflow-hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-dark-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-border rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dark-muted;
+}
+
+/* ─── Admin Dashboard Scrollbar ─── */
+.admin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.admin-scrollbar::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+.admin-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+/* ─── React Quill Dark Theme Override ─── */
+.rich-editor .ql-toolbar {
+  background: #1e293b;
+  border-color: transparent !important;
+  border-bottom: 1px solid #334155 !important;
+  border-radius: 12px 12px 0 0;
+}
+.rich-editor .ql-container {
+  background: #1e293b;
+  border-color: transparent !important;
+  border-radius: 0 0 12px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  min-height: 160px;
+}
+.rich-editor .ql-editor {
+  color: #e2e8f0;
+  min-height: 160px;
+}
+.rich-editor .ql-editor.ql-blank::before {
+  color: #64748b;
+  font-style: normal;
+}
+.rich-editor .ql-stroke {
+  stroke: #94a3b8 !important;
+}
+.rich-editor .ql-fill {
+  fill: #94a3b8 !important;
+}
+.rich-editor .ql-picker {
+  color: #94a3b8 !important;
+}
+.rich-editor .ql-picker-options {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px -4px rgba(0,0,0,0.5);
+}
+.rich-editor button:hover .ql-stroke,
+.rich-editor button.ql-active .ql-stroke {
+  stroke: #38bdf8 !important;
+}
+.rich-editor button:hover .ql-fill,
+.rich-editor button.ql-active .ql-fill {
+  fill: #38bdf8 !important;
+}
+.rich-editor .ql-picker-label:hover,
+.rich-editor .ql-picker-item:hover {
+  color: #38bdf8 !important;
+}
+
+/* ─── Prose styles for project descriptions ─── */
+.prose-invert h1, .prose-invert h2, .prose-invert h3 {
+  color: #f1f5f9;
+  font-weight: 600;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+}
+.prose-invert p {
+  margin-bottom: 0.875em;
+  line-height: 1.7;
+}
+.prose-invert ul, .prose-invert ol {
+  padding-left: 1.5em;
+  margin-bottom: 0.875em;
+}
+.prose-invert li {
+  margin-bottom: 0.25em;
+}
+.prose-invert strong {
+  color: #f8fafc;
+  font-weight: 600;
+}
+.prose-invert blockquote {
+  border-left: 3px solid #38bdf8;
+  padding-left: 1em;
+  color: #94a3b8;
+  font-style: italic;
+  margin: 1em 0;
+}
+.prose-invert code {
+  background: #0f172a;
+  color: #38bdf8;
+  padding: 0.125em 0.375em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+.prose-invert pre {
+  background: #0f172a;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+.prose-invert a {
+  color: #38bdf8;
+  text-decoration: underline;
 }
