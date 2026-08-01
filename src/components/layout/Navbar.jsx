@@ -35,7 +35,7 @@ const Navbar = () => {
               <Code2 className="text-primary-light" size={24} />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-primary-light to-secondary-light bg-clip-text text-transparent">
-              Mohamed.dev
+              Mohamed Yasser
             </span>
           </div>
 

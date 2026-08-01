@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start gap-2">
             <span className="text-xl font-bold bg-gradient-to-r from-primary-light to-secondary-light bg-clip-text text-transparent">
-              Mohamed.dev
+              Mohamed Yasser
             </span>
             <p className="text-sm text-dark-muted">
               Building beautiful and functional experiences.
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 pt-8 border-t border-dark-border/50 text-center text-sm text-dark-muted">
-          <p>&copy; {new Date().getFullYear()} Mohamed. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Mohamed Yasser. All rights reserved.</p>
         </div>
       </div>
     </footer>
